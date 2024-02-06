@@ -1,5 +1,11 @@
 .main-container {
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: 800px;
     width: 90%;
+    padding: 20px;
+    border: 1px solid;
+}
+
+.total-amount {
+    text-align: right;
 }

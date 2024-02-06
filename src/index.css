@@ -16,7 +16,6 @@
 
 body {
     font-family: "Noto Sans KR", sans-serif;
-    background-color: var(--secondColor);
     color: var(--mainBlack);
 }
 
