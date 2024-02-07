@@ -51,12 +51,10 @@
     transition: 0.3s;
 }
 
+.form-control:focus + label,
 .form-control:valid + label {
     top: -16px;
     font-size: 13px;
     color: var(--mainBlack);
 }
 
-.form-control:focus:valid + label {
-    color: var(--primaryColor);
-}
