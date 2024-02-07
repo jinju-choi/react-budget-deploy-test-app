@@ -1,15 +1,15 @@
 .alert {
     position: absolute;
-    top: 20px;
+    top: 10%;
     left: 50%;
     max-width: 90%;
     padding: .625rem 1rem;
     transform: translateX(-50%);
-    border-radius: 12px;
+    border-radius: 6px;
     word-break: keep-all;
     text-align: center;
     color: var(--mainWhite);
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 .alert-danger {

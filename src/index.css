@@ -4,7 +4,7 @@
     --secondColor: #e2ebff;
     --mainWhite: #ffffff;
     --mainBlack: #222222;
-    --mainRed: #c45151;
+    --mainRed: #d93232;
     --mainGreen: #4caf50;
     --mainGray: #8b95a1;
 }
@@ -44,6 +44,7 @@ body {
     font-size: 1rem;
     font-family: "Noto Sans KR", sans-serif;
     color: var(--mainBlack);
+    background: var(--secondColor);
 }
 
 h1 {
@@ -51,19 +52,23 @@ h1 {
 }
 
 .btn {
-    text-decoration: none;
-    color: var(--mainWhite);
-    background-color: var(--primaryColor);
-    text-align: center;
-    letter-spacing: 0.5px;
-    font-size: .875rem;
-    border: 0;
-    border-radius: 6px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: .5rem .625rem;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 0.5px;
+    font-size: .875rem;
+    border: 0;
+    color: var(--mainWhite);
+    border-radius: 6px;
     cursor: pointer;
+    background: var(--mainGray);
+}
+
+.btn.btn--primary {
+    background-color: var(--primaryColor);
 }
 
 .btn[type="submit"] {
@@ -81,6 +86,12 @@ h1 {
 
 .btn-wrap.right {
     text-align: right;
+}
+
+@media all and (max-width: 768px) {
+    body {
+        background: none;
+    }
 }
 
 @media all and (max-width: 300px) {

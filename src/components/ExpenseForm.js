@@ -31,7 +31,7 @@ const ExpenseForm = ({ charge, handleCharge, edit, amount, handleAmount, handleS
                     <label htmlFor="amount">비용</label>
                 </div>
                 <div className="btn-wrap right">
-                    <button type="submit" className="btn">
+                    <button type="submit" className="btn btn--primary">
                         {edit? "수정" : "추가" }
                     </button>
                 </div>
