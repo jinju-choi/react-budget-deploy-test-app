@@ -16,12 +16,14 @@
 
 .form-control {
     width: 100%;
-    padding: 10px 0 10px 10px;
+    padding: 8px 0 8px 10px;
     background-color: transparent;
     border: 0;
     font-size: 16px;
     outline: none;
+    border: 0;
     border-bottom: 1px solid #eee;
+    border-radius: 0;
 }
 .form-group + .form-group {
     margin-top: 2rem;
@@ -53,7 +55,7 @@
 
 .form-control:focus + label,
 .form-control:valid + label {
-    top: -16px;
+    top: -20px;
     font-size: 13px;
     color: var(--mainBlack);
 }

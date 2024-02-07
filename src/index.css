@@ -29,11 +29,11 @@ input:autofill:active {
     transition: background-color 5000s ease-in-out 0s;
 }
 
+
 * {
     margin: 0;
     box-sizing: border-box;
     font-family: "Noto Sans KR", sans-serif;
-    font: 1rem;
 }
 
 html {
