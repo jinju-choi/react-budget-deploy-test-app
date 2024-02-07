@@ -10,7 +10,7 @@ const App = () => {
     const [charge, setCharge] = useState('');
 
     // 가격 상태
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState('');
 
     // 아이디
     const [id, setId] = useState("")
@@ -82,7 +82,7 @@ const App = () => {
                 handleAlert({ type:"success", text: "목록에 추가되었습니다." })
             }
             setCharge("");
-            setAmount(0);
+            setAmount('');
         } else {
             handleAlert({ type:"danger", text: "지출항목을 입력해주세요. 비용은 0보다 커야 합니다." })
         }
@@ -93,40 +93,37 @@ const App = () => {
         setExpenses([])
     }
 
+    // 숫자 3자리 콤마찍기
+    const totalAmount = expenses.reduce((acc, curr)=> {
+        return acc += curr.amount
+    }, 0)
+
     return (
         <main className="main-container">
             {alert.show ? <Alert type={alert.type} text={alert.text} /> : null }
-            <h1><MdCalculate />얼마썼노?</h1>
-            <div className='total-amount'>
-                <p>
-                    &#8361;
-                    <span>
-                        {expenses.reduce((acc, curr)=> {
-                            return (acc += curr.amount);
-                        }, 0)}
-                    </span>
-                </p>
-            </div>
-            <div
-                style={{width: '100%',backgroundColor: 'white',padding: '1rem',}}>
-                <ExpenseForm 
-                    charge={charge} 
-                    handleCharge={handleCharge}
-                    amount={amount} 
-                    handleAmount={handleAmount} 
-                    handleSubmit={handleSubmit}
-                    edit={edit}
-                />
-            </div>
-            <div
-                style={{width: '100%',backgroundColor: 'white',padding: '1rem',}}>
-                <ExpenseList 
-                    expenses={expenses} 
-                    handleDelete={handleDelete}
-                    handleEdit={handleEdit} 
-                    clearItems={clearItems}
-                />
-            </div>
+            <h1 className='main-title'><MdCalculate />얼마썼게?</h1>
+
+            <ExpenseForm 
+                charge={charge} 
+                handleCharge={handleCharge}
+                amount={amount} 
+                handleAmount={handleAmount} 
+                handleSubmit={handleSubmit}
+                edit={edit}
+            />
+        
+            <p className='total-amount'> 
+                <span>
+                    {totalAmount.toLocaleString('ko-KR')} 원
+                </span>
+            </p>
+            
+            <ExpenseList 
+                expenses={expenses} 
+                handleDelete={handleDelete}
+                handleEdit={handleEdit} 
+                clearItems={clearItems}
+            />
         </main>
     );
 };

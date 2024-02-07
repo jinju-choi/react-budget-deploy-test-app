@@ -7,9 +7,9 @@ const ExpenseItem = ({ expense, handleDelete, handleEdit }) => {
         <li className="item">
             <div className="info">
                 <span className="expense">{expense.charge}</span>
-                <span className="amount">{expense.amount} 원</span>
+                <span className="amount">{(expense.amount).toLocaleString('ko-KR')} 원</span>
             </div>
-            <div>
+            <div style={{flexShrink: 0}}>
                 <button className="edit-btn" onClick={()=> {handleEdit(expense.id)}}>
                     <MdEdit />
                 </button>

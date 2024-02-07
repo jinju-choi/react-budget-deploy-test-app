@@ -1,23 +1,17 @@
 .form-center {
-    display: flex;
+    /* display: flex; */
     gap: 1rem;
     flex-wrap: wrap;
+    margin: 1rem 0;
+    align-items: flex-end;
 }
 
 .form-group {
+    position: relative;
     display: flex;
     align-items: center;
     flex-grow: 1;
-    border-bottom: 1px solid var(--primaryColor);
-}
-
-label {
-    display: block;
-    min-width: 63px;
-    flex-shrink: 0;
-    color: var(--primaryColor);
-    font-size: 1rem;
-    font-weight: 700;
+    /* border-bottom: 1px solid var(--primaryColor); */
 }
 
 .form-control {
@@ -27,8 +21,42 @@ label {
     border: 0;
     font-size: 16px;
     outline: none;
+    border-bottom: 1px solid #eee;
+}
+.form-group + .form-group {
+    margin-top: 2rem;
+}
+
+.form-control:focus {
+    border-color: var(--primaryColor);
+}
+
+.form-control:focus::placeholder {
+    color: #999999;
 }
 
 .form-control::placeholder {
-    color: #999999;
+    color: #ffffff;
+}
+
+.form-control + label {
+    position: absolute;
+    top: 10px;
+    display: block;
+    min-width: 63px;
+    flex-shrink: 0;
+    color: var(--mainGray);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.form-control:valid + label {
+    top: -16px;
+    font-size: 13px;
+    color: var(--mainBlack);
+}
+
+.form-control:focus:valid + label {
+    color: var(--primaryColor);
 }

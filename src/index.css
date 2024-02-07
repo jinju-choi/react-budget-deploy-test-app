@@ -1,20 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
-    --primaryColor: #376be3;
+    --primaryColor: #3182f6;
     --secondColor: #e2ebff;
     --mainWhite: #ffffff;
     --mainBlack: #222222;
     --mainRed: #c45151;
     --mainGreen: #4caf50;
+    --mainGray: #8b95a1;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-text-fill-color: #000;
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    box-shadow: 0 0 0px 1000px #fff inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input:autofill,
+input:autofill:hover,
+input:autofill:focus,
+input:autofill:active {
+	-webkit-text-fill-color: #000;
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    box-shadow: 0 0 0px 1000px #fff inset;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 * {
     margin: 0;
     box-sizing: border-box;
     font-family: "Noto Sans KR", sans-serif;
+    font: 1rem;
+}
+
+html {
+    font: 16px;
 }
 
 body {
+    font-size: 1rem;
     font-family: "Noto Sans KR", sans-serif;
     color: var(--mainBlack);
 }
@@ -29,15 +56,35 @@ h1 {
     background-color: var(--primaryColor);
     text-align: center;
     letter-spacing: 0.5px;
-    font-size: 14px;
+    font-size: .875rem;
     border: 0;
-    border-radius: 3px;
+    border-radius: 6px;
     display: inline-flex;
     align-items: center;
-    padding: 5px 10px;
+    justify-content: center;
+    padding: .5rem .625rem;
     cursor: pointer;
+}
+
+.btn[type="submit"] {
+    width: 100%;
+    font-size: 1rem;
 }
 
 .btn-icon {
     margin-left: 5px;
+}
+
+.btn-wrap {
+    margin-top: 2rem;
+}
+
+.btn-wrap.right {
+    text-align: right;
+}
+
+@media all and (max-width: 300px) {
+    html {
+        font-size: 14px;
+    }
 }

@@ -1,11 +1,18 @@
 .main-container {
-    margin: 0 auto;
-    max-width: 800px;
-    width: 90%;
-    padding: 20px;
-    border: 1px solid;
+    max-width: 480px;
+    margin: auto;
+    padding: 2rem 1rem;
+    background: var(--mainWhite);
 }
 
 .total-amount {
     text-align: right;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.main-title {
+    margin: 0 0 4rem;
+    font-size: 1.4rem;
+    color: var(--primaryColor);
 }
