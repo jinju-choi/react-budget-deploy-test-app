@@ -3,7 +3,7 @@ import './App.css';
 import ExpenseForm from './components/ExpenseForm';
 import ExpenseList from './components/ExpenseList';
 import Alert from './components/Alert';
-import { MdCalculate } from 'react-icons/md';
+import { LuWallet } from "react-icons/lu";
 
 const App = () => {
     // 항목 내용 상태
@@ -23,16 +23,16 @@ const App = () => {
 
     // 목록
     const [expenses, setExpenses] = useState([
-        { id: 1, charge: '렌트비', amount: 1200 },
-        { id: 2, charge: '교통비', amount: 400 },
-        { id: 3, charge: '식비', amount: 1 },
+        // { id: 1, charge: '렌트비', amount: 1200 },
+        // { id: 2, charge: '교통비', amount: 400 },
+        // { id: 3, charge: '식비', amount: 1 },
     ]);
 
     // 아이템 삭제하기
     const handleDelete = id => {
         const newExpenses = expenses.filter((expense) => expense.id !== id);
         setExpenses(newExpenses);
-        handleAlert({type: "danger", text: "목록에서 삭제되었습니다."})
+        handleAlert({type: "danger", text: "삭제되었습니다."})
     };
 
     // 내용 수정하기
@@ -52,6 +52,7 @@ const App = () => {
 
     // 항목 비용 
     const handleAmount = (e) => {
+        // let value = Number(e.target.value)
         setAmount(e.target.valueAsNumber);
     };
 
@@ -73,16 +74,16 @@ const App = () => {
                 })
                 setExpenses(newExpense)
                 setEdit(false)
-                handleAlert({type: "success", text: "아이템이 수정되었습니다."})
+                handleAlert({type: "success", text: "수정되었습니다."})
             } else {
                 const newExpense = {id: crypto.randomUUID(), charge, amount}
                 // 불변성을 지켜주기 위해 새로운 expense생성
                 const newExpenses = [...expenses, newExpense]
                 setExpenses(newExpenses)
-                handleAlert({ type:"success", text: "목록에 추가되었습니다." })
+                handleAlert({ type:"success", text: "추가되었습니다." })
             }
             setCharge("");
-            setAmount('');
+            setAmount(0);
         } else {
             handleAlert({ type:"danger", text: "지출항목을 입력해주세요. 비용은 0보다 커야 합니다." })
         }
@@ -98,10 +99,24 @@ const App = () => {
         return acc += curr.amount
     }, 0)
 
+    // const keyUpAmount = (e) => {
+    //     let target = e.target
+    //     let value = e.target.value;
+    //     value = Number(value.replaceAll(',', ''));
+    //     console.log(value);
+    //     if(isNaN(value)) {
+    //         target.value = 0;
+    //     }else {
+    //         const formatValue = value.toLocaleString('ko-KR');
+    //         target.value = formatValue;
+    //     }
+    // }
+
+
     return (
         <main className="main-container">
             {alert.show ? <Alert type={alert.type} text={alert.text} /> : null }
-            <h1 className='main-title'><MdCalculate />얼마썼게?</h1>
+            <h1 className='main-title'><LuWallet /> 얼마썼게?</h1>
 
             <ExpenseForm 
                 charge={charge} 

@@ -39,6 +39,7 @@
 
 .form-control::placeholder {
     color: #ffffff;
+    transition: 0.3s;
 }
 
 .form-control + label {

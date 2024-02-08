@@ -14,6 +14,7 @@ const ExpenseForm = ({ charge, handleCharge, edit, amount, handleAmount, handleS
                         name="charge"
                         value={charge}
                         onChange={handleCharge}
+                        placeholder="예) 렌트비"
                         required
                     />
                     <label htmlFor="charge">지출 항목</label>
